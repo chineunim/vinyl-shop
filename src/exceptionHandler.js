@@ -31,21 +31,10 @@ class TableOpenError extends MyException {
 }
 
 // Клас обробника винятків
-class ExceptionHandler {
+export default class ExceptionHandler {
   handleException(error) {
     console.error(`Caught an exception: ${error.name} - ${error.message}`);
     console.error(`Status Code: ${error.statusCode}`);
     // Додайте додаткову обробку винятку за потребою
   }
-}
-
-// Тестовий код для випробування обробки винятків
-try {
-  // Спроба читання файлу (можна використати ваші функції читання файлу)
-  throw new FileReadError("Could not read the file.");
-} catch (error) {
-  // Створення об'єкта обробника винятків
-  const exceptionHandler = new ExceptionHandler();
-  // Обробка винятку
-  exceptionHandler.handleException(error);
 }

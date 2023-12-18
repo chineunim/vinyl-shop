@@ -19,7 +19,7 @@ function createReportViewModel() {
         store.sales = salesData.map(sale => SaleModel(sale.id, sale.artist, sale.album, sale.cover, sale.amount));
         dataFactory.saveData(store.sales);
     } catch (error) {
-        exceptionHandler.handleServerError(error);
+				console.error("Error loading sales", error);
     }
 		},
 
